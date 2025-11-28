@@ -2,9 +2,8 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Button from './Button.svelte';
 
 const meta = {
-  title: 'Components/Button',
+  title: 'Button',
   component: Button,
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: { type: 'select' },
@@ -12,6 +11,7 @@ const meta = {
     },
     disabled: { control: 'boolean' },
     label: { control: 'text' },
+    style: { control: 'object' },
     onclick: { action: 'clicked' },
   },
 } satisfies Meta<any>;
@@ -37,5 +37,26 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     label: 'Disabled Button',
+  },
+};
+
+export const CustomStyle: Story = {
+  args: {
+    variant: 'primary',
+    label: 'Custom Style Button',
+    style: {
+      backgroundColor: '#ff4d4f',
+      borderRadius: '20px',
+      padding: '12px 24px',
+      fontSize: '16px',
+    },
+  },
+};
+
+export const CustomStyleString: Story = {
+  args: {
+    variant: 'secondary',
+    label: 'Style as String',
+    style: 'background-color: #52c41a; color: white; border-radius: 8px;',
   },
 };

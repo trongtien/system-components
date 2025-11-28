@@ -1,9 +1,12 @@
 <script lang="ts">
+  import type { CSSProperties } from "../../types";
+  import { toStyleString } from "../../utils";
   interface Props {
     label?: string;
     variant?: "primary" | "secondary";
     disabled?: boolean;
     onclick?: (e: MouseEvent) => void;
+    style?: string | CSSProperties;
   }
 
   let {
@@ -11,15 +14,22 @@
     variant = "primary",
     disabled = false,
     onclick,
+    style,
   }: Props = $props();
 
   function handleClick(e: MouseEvent) {
     if (disabled) return;
     onclick?.(e);
   }
+
+  let computedStyle = $derived(toStyleString(style));
 </script>
 
-<button class={variant} {disabled} {...{ onclick: handleClick }}>
+<button
+  class={variant}
+  {disabled}
+  {...{ onclick: handleClick, style: computedStyle }}
+>
   <slot>{label}</slot>
 </button>
 
