@@ -10,7 +10,7 @@ export default defineConfig({
       }
     })
   ],
- build: {
+  build: {
     lib: {
       entry: "src/index.ts",
       formats: ["es", "umd"],
