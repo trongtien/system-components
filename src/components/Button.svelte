@@ -1,24 +1,26 @@
 <script lang="ts">
-  import type { CSSProperties } from "../../types";
-  import { toStyleString } from "../../utils";
-  interface Props {
-    label?: string;
-    variant?: "primary" | "secondary";
-    disabled?: boolean;
-    onclick?: (e: MouseEvent) => void;
-    style?: string | CSSProperties;
-  }
+  import type { ButtonProps } from "../types";
+  import { toStyleString } from "../utils";
+
+  interface Props extends ButtonProps {}
 
   let {
     label = "Button",
     variant = "primary",
     disabled = false,
+    permission = true,
     onclick,
     style,
   }: Props = $props();
 
   function handleClick(e: MouseEvent) {
     if (disabled) return;
+
+    if (!permission) {
+      alert("You do not have permission to perform this action.");
+      return;
+    }
+
     onclick?.(e);
   }
 

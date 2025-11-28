@@ -1,5 +1,5 @@
 import { Meta, Canvas, Controls, Story } from "@storybook/blocks";
-import * as ButtonStories from "../components/button/Button.stories";
+import * as ButtonStories from "./Button.stories";
 
 <Meta of={ButtonStories} />
 
@@ -61,3 +61,14 @@ You can also pass a CSS string directly.
 ## API
 
 <Controls />
+
+### ButtonProps
+
+| Property   | Description                 | Type                      | Default   |
+| ---------- | --------------------------- | ------------------------- | --------- |
+| label      | Text content of button      | `string`                  | `Button`  |
+| variant    | Button style variant        | `primary` `secondary`     | `primary` |
+| disabled   | Whether button is disabled  | `boolean`                 | `false`   |
+| permission | Whether user has permission | `boolean`                 | `false`   |
+| style      | Custom inline style         | `string` `CSSProperties`  | -         |
+| onclick    | Click event handler         | `(e: MouseEvent) => void` | -         |
