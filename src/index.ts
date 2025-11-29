@@ -5,7 +5,9 @@ import './styles/main.scss'
 export * from './types/index'
 
 // Export Svelte components (for direct usage if needed)
+export { default as Badge } from './components/Badge.svelte'
 export { default as Button } from './components/Button.svelte'
+export { default as Card } from './components/Card.svelte'
 export { default as Notify } from './components/Notify.svelte'
 export { default as Typography } from './components/Typography.svelte'
 export { default as Input } from './components/Input.svelte'

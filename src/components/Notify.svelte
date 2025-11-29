@@ -1,4 +1,4 @@
-<svelte:options customElement={{ tag: "system-notify", shadow: "none" }} />
+<svelte:options customElement={{ tag: "notify-component", shadow: "none" }} />
 
 <script lang="ts">
   import { NotifyAmp } from "../amp/notify.amp";

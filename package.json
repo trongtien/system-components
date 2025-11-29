@@ -11,6 +11,10 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
+    "./react": {
+      "import": "./src/react.js",
+      "types": "./src/react.d.ts"
+    },
     "./styles": "./dist/index.css",
     "./dist/index.css": "./dist/index.css",
     "./index.css": "./dist/index.css"

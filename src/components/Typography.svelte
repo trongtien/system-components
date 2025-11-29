@@ -1,4 +1,4 @@
-<svelte:options customElement={{ tag: "system-typography", shadow: "none" }} />
+<svelte:options customElement={{ tag: "typography-component", shadow: "none" }} />
 
 <script lang="ts">
   import type { TypographyProps, TypographyVariant } from "../types";
