@@ -1,8 +1,13 @@
 <script lang="ts">
   import type { ButtonProps } from "../types";
   import { toStyleString } from "../utils";
+  import type { Snippet } from "svelte";
 
-  interface Props extends ButtonProps {}
+  interface Props extends ButtonProps {
+    children?: Snippet;
+    prefix?: Snippet;
+    suffix?: Snippet;
+  }
 
   let {
     label = "Button",
@@ -11,6 +16,11 @@
     permission = true,
     onclick,
     style,
+    icon,
+    iconPosition = "left",
+    children,
+    prefix,
+    suffix,
   }: Props = $props();
 
   function handleClick(e: MouseEvent) {
@@ -26,6 +36,9 @@
 
   let computedStyle = $derived(toStyleString(style));
   let buttonClass = $derived(`btn btn--${variant}`);
+  let hasIcon = $derived(!!icon);
+  let showIconLeft = $derived(hasIcon && iconPosition === "left");
+  let showIconRight = $derived(hasIcon && iconPosition === "right");
 </script>
 
 <button
@@ -33,7 +46,33 @@
   {disabled}
   {...{ onclick: handleClick, style: computedStyle }}
 >
-  <slot>{label}</slot>
+  {#if prefix}
+    <span class="btn__prefix">
+      {@render prefix()}
+    </span>
+  {/if}
+  
+  {#if showIconLeft}
+    <span class="btn__icon btn__icon--left">{icon}</span>
+  {/if}
+  
+  <span class="btn__content">
+    {#if children}
+      {@render children()}
+    {:else}
+      {label}
+    {/if}
+  </span>
+  
+  {#if showIconRight}
+    <span class="btn__icon btn__icon--right">{icon}</span>
+  {/if}
+  
+  {#if suffix}
+    <span class="btn__suffix">
+      {@render suffix()}
+    </span>
+  {/if}
 </button>
 
 <style lang="scss">
@@ -110,5 +149,39 @@
         color: var(--accent-foreground);
       }
     }
+  }
+
+  .btn__content {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .btn__icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1em;
+    line-height: 1;
+
+    &--left {
+      margin-right: 0.5rem;
+    }
+
+    &--right {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .btn__prefix,
+  .btn__suffix {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .btn__prefix {
+    margin-right: 0.5rem;
+  }
+
+  .btn__suffix {
+    margin-left: 0.5rem;
   }
 </style>
