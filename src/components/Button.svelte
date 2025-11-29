@@ -1,4 +1,4 @@
-<svelte:options customElement="system-button" />
+<svelte:options customElement={{ tag: "system-button", shadow: "none" }} />
 
 <script lang="ts">
   import type { ButtonProps } from "../types";

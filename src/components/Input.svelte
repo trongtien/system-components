@@ -1,4 +1,4 @@
-<svelte:options customElement="system-input" />
+<svelte:options customElement={{ tag: "system-input", shadow: "none" }} />
 
 <script lang="ts">
   import type { InputProps } from "../types";
