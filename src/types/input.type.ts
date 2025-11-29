@@ -39,9 +39,7 @@ export interface InputProps extends ComponentBaseProps {
   label?: string;
   helperText?: string;
   error?: boolean;
-  errorMessage?: string;
   success?: boolean;
-  successMessage?: string;
   prefix?: string;
   suffix?: string;
   maxlength?: number;
