@@ -43,7 +43,7 @@ type Story = StoryObj<typeof meta>;
 const createStory = (childrenText: string, defaultArgs: any = {}): Story => ({
   render: (args) => {
     // Remove children from args to prevent override
-    const { children, ...restArgs } = args;
+    const { ...restArgs } = args;
     return {
       Component: Typography,
       props: {
@@ -74,7 +74,7 @@ export const CustomColor: Story = createStory('Text with custom color', { varian
 
 export const Truncated: Story = {
   render: (args) => {
-    const { children, ...restArgs } = args;
+    const { ...restArgs } = args;
     return {
       Component: Typography,
       props: {
