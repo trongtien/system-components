@@ -1,3 +1,5 @@
+<svelte:options customElement="system-notify" />
+
 <script lang="ts">
   import { NotifyAmp } from "../amp/notify.amp";
   import type { NotifyProps } from "../types";

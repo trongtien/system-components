@@ -1,6 +1,5 @@
-// Import styles and register custom elements
+// Import styles - custom elements auto-register with svelte:options
 import './styles/main.scss'
-import './define-element'
 
 // Export types for TypeScript support
 export * from './types/index'

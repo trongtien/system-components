@@ -36,9 +36,11 @@
   "author": "kevid",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && vite build && npm run build:types",
+    "build": "npm run clean && vite build && npm run build:types && npm run generate:react-types && npm run merge:types",
     "build:watch": "vite build --watch",
     "build:types": "tsc -p tsconfig.build.json",
+    "generate:react-types": "node scripts/generate-react-types.mjs",
+    "merge:types": "node scripts/merge-types.mjs",
     "dev": "storybook dev -p 6006",
     "dev:lib": "vite build --watch",
     "preview": "vite preview",

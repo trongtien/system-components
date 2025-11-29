@@ -1,3 +1,5 @@
+<svelte:options customElement="system-button" />
+
 <script lang="ts">
   import type { ButtonProps } from "../types";
   import { toStyleString } from "../utils";
@@ -39,9 +41,30 @@
   let hasIcon = $derived(!!icon);
   let showIconLeft = $derived(hasIcon && iconPosition === "left");
   let showIconRight = $derived(hasIcon && iconPosition === "right");
+
+  // Expose button element reference
+  let buttonElement: HTMLButtonElement;
+
+  // Expose methods for external access
+  export function getButtonElement() {
+    return buttonElement;
+  }
+
+  export function focus() {
+    buttonElement?.focus();
+  }
+
+  export function blur() {
+    buttonElement?.blur();
+  }
+
+  export function click() {
+    buttonElement?.click();
+  }
 </script>
 
 <button
+  bind:this={buttonElement}
   class={buttonClass}
   {disabled}
   {...{ onclick: handleClick, style: computedStyle }}

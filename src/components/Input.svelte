@@ -1,3 +1,5 @@
+<svelte:options customElement="system-input" />
+
 <script lang="ts">
   import type { InputProps } from "../types";
   import { toStyleString } from "../utils";

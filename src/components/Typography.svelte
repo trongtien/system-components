@@ -1,3 +1,5 @@
+<svelte:options customElement="system-typography" />
+
 <script lang="ts">
   import type { TypographyProps, TypographyVariant } from "../types";
   import { toStyleString } from "../utils";
