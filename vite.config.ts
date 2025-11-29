@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,10 +18,26 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: "src/index.ts",
-      formats: ["es", "umd"],
-      name: "system-component",
-      fileName: (format) => `system-component.${format}.js`
+      entry: resolve(__dirname, 'src/index.ts'),
+      formats: ['es'],
+      name: 'SystemComponents',
+      fileName: 'index'
+    },
+    rollupOptions: {
+      external: ['svelte', 'svelte/internal'],
+      output: {
+        globals: {
+          svelte: 'svelte',
+          'svelte/internal': 'svelte'
+        }
+      }
+    },
+    sourcemap: true,
+    minify: false
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src')
     }
   }
 })

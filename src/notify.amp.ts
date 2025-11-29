@@ -1,5 +1,5 @@
-import type { NotifyConfig, NotifyItem, NotifyPlacement, NotifyProps } from "../types";
-import { toStyleString } from "../utils";
+import type { NotifyConfig, NotifyItem, NotifyPlacement, NotifyProps } from "./types/index";
+import { toStyleString } from "./utils/index";
 
 export class NotifyAmp {
     #maxCount: number = 5;

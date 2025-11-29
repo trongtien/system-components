@@ -1,19 +1,63 @@
 {
-  "name": "system-components",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@kevid/system-components",
+  "version": "1.0.0",
+  "description": "Reusable system components built with Svelte",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/index.css",
+    "./dist/index.css": "./dist/index.css",
+    "./index.css": "./dist/index.css"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trongtien/system-components.git"
+  },
+  "keywords": [
+    "svelte",
+    "components",
+    "ui",
+    "design-system"
+  ],
+  "author": "kevid",
+  "license": "MIT",
   "scripts": {
+    "build": "npm run clean && vite build && tsc -p tsconfig.build.json",
+    "build:watch": "vite build --watch",
+    "build:types": "tsc -p tsconfig.build.json",
     "dev": "storybook dev -p 6006",
-    "build": "vite build",
+    "dev:lib": "vite build --watch",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.svelte",
+    "lint:fix": "eslint src --ext .ts,.svelte --fix",
+    "format": "prettier --write src",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
   },
   "devDependencies": {
     "@cypress/svelte": "^3.0.0",
@@ -31,8 +75,11 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/svelte": "^5.2.9",
     "@tsconfig/svelte": "^5.0.6",
+    "@types/eslint": "^8.56.12",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "@vitest/ui": "^4.0.14",
     "autoprefixer": "^10.4.22",
     "babel-jest": "^30.2.0",
@@ -41,6 +88,9 @@
     "jest-environment-jsdom": "^30.2.0",
     "jsdom": "^25.0.1",
     "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-svelte": "^3.4.0",
+    "rimraf": "^5.0.10",
     "sass": "^1.94.2",
     "storybook": "^8.6.14",
     "svelte": "^5.0.0",

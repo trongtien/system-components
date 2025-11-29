@@ -1,0 +1,29 @@
+# Development files
+.storybook/
+stories/
+cypress/
+docs/
+node_modules/
+.git/
+.github/
+
+# Config files
+.gitignore
+.eslintrc.*
+.prettierrc.*
+vite.config.ts
+vitest.config.ts
+jest.config.cjs
+svelte.config.js
+tsconfig.*.json
+*.md
+!README.md
+
+# Build artifacts
+.turbo/
+.vite/
+coverage/
+storybook-static/
+
+# Environment
+.env*
