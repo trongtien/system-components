@@ -36,7 +36,7 @@
   "author": "kevid",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && vite build && tsc -p tsconfig.build.json",
+    "build": "npm run clean && vite build && npm run build:types",
     "build:watch": "vite build --watch",
     "build:types": "tsc -p tsconfig.build.json",
     "dev": "storybook dev -p 6006",
