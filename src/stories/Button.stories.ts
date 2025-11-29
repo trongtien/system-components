@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary']
+      options: ['primary', 'secondary', 'destructive', 'outline', 'ghost']
     },
     disabled: {
       control: { type: 'boolean' }
@@ -23,7 +23,7 @@ const meta = {
       control: { type: 'text' }
     }
   },
-} satisfies Meta<Button>;
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -39,6 +39,27 @@ export const Secondary: Story = {
   args: {
     variant: 'secondary',
     label: 'Secondary Button'
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    label: 'Destructive Button'
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    label: 'Outline Button'
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    label: 'Ghost Button'
   },
 };
 

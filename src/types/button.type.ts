@@ -1,6 +1,6 @@
 import type { ComponentBaseProps } from "./base-props.type";
 
-export type ButtonVariant = 'primary' | 'secondary';
+export type ButtonVariant = 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
 
 export interface ButtonProps extends ComponentBaseProps {
   variant?: ButtonVariant;

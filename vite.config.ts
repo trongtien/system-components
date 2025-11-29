@@ -10,6 +10,11 @@ export default defineConfig({
       }
     })
   ],
+  css: {
+    postcss: {
+      plugins: []
+    }
+  },
   build: {
     lib: {
       entry: "src/index.ts",
