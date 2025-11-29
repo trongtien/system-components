@@ -9,9 +9,15 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:component": "cypress run --component",
+    "cy:component:open": "cypress open --component",
+    "test": "cypress run --component"
   },
   "devDependencies": {
+    "@cypress/svelte": "^3.0.0",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
     "@storybook/addon-links": "^8.6.14",
@@ -22,8 +28,10 @@
     "@storybook/test": "^8.6.14",
     "@storybook/theming": "^8.6.14",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@testing-library/cypress": "^10.1.0",
     "@tsconfig/svelte": "^5.0.6",
     "@types/node": "^24.10.1",
+    "cypress": "^15.7.0",
     "storybook": "^8.6.14",
     "svelte": "^5.43.8",
     "svelte-check": "^4.3.4",
