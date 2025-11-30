@@ -1,6 +1,6 @@
 // Auto-generated React Component Wrappers for System Components
 // These render native HTML elements with the same styling and behavior
-// Generated at: 2025-11-29T17:27:45.395Z
+// Generated at: 2025-11-30T13:23:52.379Z
 
 import React, { forwardRef, useCallback } from 'react';
 
@@ -120,41 +120,45 @@ export const Card = forwardRef((props, ref) => {
 
 Card.displayName = 'Card';
 
-// Input component - renders native HTML element
-export const Input = forwardRef((props, ref) => {
+// SystemInput component - renders native HTML element
+export const SystemInput = forwardRef((props, ref) => {
   const {
-    type = 'text',
-    placeholder,
-    value,
-    disabled = false,
-    readonly = false,
-    required = false,
     style,
-    onchange,
-    oninput,
     className,
+    children,
     ...rest
   } = props;
 
   const computedStyle = typeof style === 'object' ? style : (style || undefined);
-  const inputClass = `input${className ? ` ${className}` : ''}`;
 
-  return React.createElement('input', {
+  return React.createElement('systeminput', {
     ref,
-    type,
-    placeholder,
-    value,
-    disabled,
-    readOnly: readonly,
-    required,
-    className: inputClass,
+    className,
     style: computedStyle,
-    onChange: onchange,
-    onInput: oninput,
     ...rest
-  });});
+  }, children);});
 
-Input.displayName = 'Input';
+SystemInput.displayName = 'SystemInput';
+
+// SystemLabel component - renders native HTML element
+export const SystemLabel = forwardRef((props, ref) => {
+  const {
+    style,
+    className,
+    children,
+    ...rest
+  } = props;
+
+  const computedStyle = typeof style === 'object' ? style : (style || undefined);
+
+  return React.createElement('systemlabel', {
+    ref,
+    className,
+    style: computedStyle,
+    ...rest
+  }, children);});
+
+SystemLabel.displayName = 'SystemLabel';
 
 // Notify component wrapper - uses custom element due to complexity
 export const Notify = forwardRef((props, ref) => {

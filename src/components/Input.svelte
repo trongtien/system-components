@@ -1,9 +1,9 @@
-<svelte:options customElement={{ tag: "input-component", shadow: "none" }} />
+<svelte:options customElement={{ tag: 'input-component', shadow: 'none' }} />
 
 <script lang="ts">
-  import type { InputProps } from "../types";
-  import { toStyleString } from "../utils";
-  import type { Snippet } from "svelte";
+  import type { InputProps } from '../types';
+  import { toStyleString } from '../utils';
+  import type { Snippet } from 'svelte';
 
   interface Props extends InputProps {
     prefixSlot?: Snippet;
@@ -11,9 +11,9 @@
   }
 
   let {
-    type = "text",
-    variant = "default",
-    size = "md",
+    type = 'text',
+    variant = 'default',
+    size = 'md',
     placeholder,
     value = $bindable(),
     defaultValue,
@@ -49,40 +49,40 @@
 
   // Generate unique id if not provided
   const inputId = $derived(id || `input-${Math.random().toString(36).substr(2, 9)}`);
-  
+
   // Build class strings
   let inputClass = $derived(() => {
-    const classes = ["input", `input--${variant}`, `input--${size}`];
-    
+    const classes = ['input', `input--${variant}`, `input--${size}`];
+
     if (error) {
-      classes.push("input--error");
+      classes.push('input--error');
     } else if (success) {
-      classes.push("input--success");
+      classes.push('input--success');
     }
-    
+
     if (disabled) {
-      classes.push("input--disabled");
+      classes.push('input--disabled');
     }
-    
+
     if (readonly) {
-      classes.push("input--readonly");
+      classes.push('input--readonly');
     }
-    
-    return classes.join(" ");
+
+    return classes.join(' ');
   });
 
   let wrapperClass = $derived(() => {
-    const classes = ["input-wrapper"];
-    
+    const classes = ['input-wrapper'];
+
     if (prefix || prefixSlot) {
-      classes.push("input-wrapper--has-prefix");
+      classes.push('input-wrapper--has-prefix');
     }
-    
+
     if (suffix || suffixSlot) {
-      classes.push("input-wrapper--has-suffix");
+      classes.push('input-wrapper--has-suffix');
     }
-    
-    return classes.join(" ");
+
+    return classes.join(' ');
   });
 
   // Convert style to string
@@ -132,7 +132,7 @@
         {/if}
       </div>
     {/if}
-    
+
     <!-- svelte-ignore a11y_autofocus -->
     <input
       {type}
@@ -162,7 +162,7 @@
       onkeydown={handleKeydown}
       onkeyup={handleKeyup}
     />
-    
+
     {#if suffix || suffixSlot}
       <div class="input-suffix">
         {#if suffixSlot}
@@ -354,9 +354,9 @@
   }
 
   // File input styling
-  .input[type="file"] {
+  .input[type='file'] {
     padding: 0.5rem;
-    
+
     &::file-selector-button {
       border: none;
       background-color: var(--muted);

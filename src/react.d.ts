@@ -1,6 +1,6 @@
 // Auto-generated React TypeScript definitions for system-components
-// Generated at: 2025-11-29T17:27:45.700Z
-// Components: badge-component, button-component, card-component, input-component, notify-component, typography-component
+// Generated at: 2025-11-30T13:23:52.405Z
+// Components: badge-component, button-component, card-component, system-input, system-label, notify-component, typography-component
 
 import { NotifyComponentElement } from './index';
 import React from 'react';
@@ -32,40 +32,11 @@ export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  type?: InputType;
-  variant?: InputVariant;
-  size?: InputSize;
-  placeholder?: string;
-  value?: string | number;
-  defaultValue?: string | number;
-  disabled?: boolean;
-  readonly?: boolean;
-  required?: boolean;
-  autofocus?: boolean;
-  autocomplete?: string;
-  name?: string;
-  id?: string;
-  label?: string;
-  helperText?: string;
-  error?: boolean;
-  success?: boolean;
-  prefix?: string;
-  suffix?: string;
-  maxlength?: number;
-  minlength?: number;
-  pattern?: string;
-  min?: number | string;
-  max?: number | string;
-  step?: number | string;
-  multiple?: boolean;
-  accept?: string;
-  oninput?: (e: React.FormEvent<HTMLInputElement>) => void;
-  onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onfocus?: (event: FocusEvent & { currentTarget: HTMLInputElement }) => void;
-  onblur?: (event: FocusEvent & { currentTarget: HTMLInputElement }) => void;
-  onkeydown?: (event: KeyboardEvent & { currentTarget: HTMLInputElement }) => void;
-  onkeyup?: (event: KeyboardEvent & { currentTarget: HTMLInputElement }) => void;
+export interface SystemInputProps extends React.HTMLAttributes<HTMLElement> {
+  children?: React.ReactNode;
+}
+
+export interface SystemLabelProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
@@ -96,6 +67,7 @@ export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
 export const Badge: React.ForwardRefExoticComponent<BadgeProps & React.RefAttributes<HTMLElement>>;
 export const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 export const Card: React.ForwardRefExoticComponent<CardProps & React.RefAttributes<HTMLElement>>;
-export const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
+export const SystemInput: React.ForwardRefExoticComponent<SystemInputProps & React.RefAttributes<HTMLElement>>;
+export const SystemLabel: React.ForwardRefExoticComponent<SystemLabelProps & React.RefAttributes<HTMLElement>>;
 export const Notify: React.ForwardRefExoticComponent<NotifyProps & React.RefAttributes<NotifyComponentElement>>;
 export const Typography: React.ForwardRefExoticComponent<TypographyProps & React.RefAttributes<HTMLElement>>;
