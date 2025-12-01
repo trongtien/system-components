@@ -117,7 +117,6 @@
       outline: 2px solid var(--ring);
       outline-offset: 2px;
     }
-
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -131,7 +130,6 @@
         opacity: 0.9;
       }
     }
-
     &--secondary {
       background-color: var(--secondary);
       color: var(--secondary-foreground);
@@ -141,7 +139,6 @@
         opacity: 0.8;
       }
     }
-
     &--destructive {
       background-color: var(--destructive);
       color: var(--primary-foreground);
@@ -150,12 +147,10 @@
         opacity: 0.9;
       }
     }
-
     &--outline {
       border-color: var(--border);
       background-color: transparent;
       color: var(--foreground);
-
       &:hover:not(:disabled) {
         background-color: var(--accent);
         color: var(--accent-foreground);
