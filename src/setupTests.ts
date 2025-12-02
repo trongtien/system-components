@@ -1,14 +1,20 @@
 // Setup file for Vitest
 import { vi } from 'vitest';
+import '@testing-library/jest-dom';
 
-// Mock DOM APIs for Node environment
-(globalThis as any).HTMLElement = class HTMLElement {};
-(globalThis as any).Document = class Document {};
-(globalThis as any).document = new (globalThis as any).Document();
+// Mock ResizeObserver
+global.ResizeObserver = vi.fn(() => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
+}));
 
-// Mock window object
-(globalThis as any).window = {
-  addEventListener: vi.fn(),
-  removeEventListener: vi.fn(),
-  location: { href: 'http://localhost' }
-};
+// Mock IntersectionObserver
+global.IntersectionObserver = vi.fn(() => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
+}));
+
+// Mock scrollIntoView
+Element.prototype.scrollIntoView = vi.fn();
