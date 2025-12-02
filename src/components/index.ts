@@ -1,4 +1,12 @@
 export { default as Button } from './Button.svelte';
+export { default as Combobox } from './Combobox.svelte';
+export { default as AsyncCombobox } from './AsyncCombobox.svelte';
+export { default as ComboboxTrigger } from './ComboboxTrigger.svelte';
+export { default as ComboboxDropdown } from './ComboboxDropdown.svelte';
+export { default as AsyncComboboxDropdown } from './AsyncComboboxDropdown.svelte';
+export { default as ComboboxSearch } from './ComboboxSearch.svelte';
+export { default as ComboboxItemComponent } from './ComboboxItem.svelte';
+export { default as ComboboxGroup } from './ComboboxGroup.svelte';
 export { default as Input } from './Input.svelte';
 export { default as Label } from './Label.svelte';
 export { default as Radio } from './Radio.svelte';
