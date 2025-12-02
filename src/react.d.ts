@@ -1,6 +1,6 @@
 // Auto-generated React TypeScript definitions for system-components
-// Generated at: 2025-12-01T09:52:41.768Z
-// Components: async-combobox-component, system-asynccomboboxdropdown, badge-component, button-component, card-component, combobox-component, system-comboboxdropdown, system-comboboxgroup, system-comboboxitem, system-comboboxsearch, system-comboboxtrigger, system-input, system-label, notify-component, system-radio, typography-component
+// Generated at: 2025-12-02T07:46:15.635Z
+// Components: async-combobox-component, system-asynccomboboxdropdown, badge-component, button-component, card-component, combobox-component, system-comboboxdropdown, system-comboboxgroup, system-comboboxitem, system-comboboxsearch, system-comboboxtrigger, system-gridbuilder, system-gridcontainer, system-griditem, system-input, system-label, notify-component, system-radio, typography-component
 
 import { NotifyComponentElement } from './index';
 import React from 'react';
@@ -80,6 +80,18 @@ export interface SystemComboboxtriggerProps extends React.HTMLAttributes<HTMLEle
   children?: React.ReactNode;
 }
 
+export interface SystemGridbuilderProps extends React.HTMLAttributes<HTMLElement> {
+  children?: React.ReactNode;
+}
+
+export interface SystemGridcontainerProps extends React.HTMLAttributes<HTMLElement> {
+  children?: React.ReactNode;
+}
+
+export interface SystemGriditemProps extends React.HTMLAttributes<HTMLElement> {
+  children?: React.ReactNode;
+}
+
 export interface SystemInputProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
@@ -127,6 +139,9 @@ export const SystemComboboxgroup: React.ForwardRefExoticComponent<SystemCombobox
 export const SystemComboboxitem: React.ForwardRefExoticComponent<SystemComboboxitemProps & React.RefAttributes<HTMLElement>>;
 export const SystemComboboxsearch: React.ForwardRefExoticComponent<SystemComboboxsearchProps & React.RefAttributes<HTMLElement>>;
 export const SystemComboboxtrigger: React.ForwardRefExoticComponent<SystemComboboxtriggerProps & React.RefAttributes<HTMLElement>>;
+export const SystemGridbuilder: React.ForwardRefExoticComponent<SystemGridbuilderProps & React.RefAttributes<HTMLElement>>;
+export const SystemGridcontainer: React.ForwardRefExoticComponent<SystemGridcontainerProps & React.RefAttributes<HTMLElement>>;
+export const SystemGriditem: React.ForwardRefExoticComponent<SystemGriditemProps & React.RefAttributes<HTMLElement>>;
 export const SystemInput: React.ForwardRefExoticComponent<SystemInputProps & React.RefAttributes<HTMLElement>>;
 export const SystemLabel: React.ForwardRefExoticComponent<SystemLabelProps & React.RefAttributes<HTMLElement>>;
 export const Notify: React.ForwardRefExoticComponent<NotifyProps & React.RefAttributes<NotifyComponentElement>>;

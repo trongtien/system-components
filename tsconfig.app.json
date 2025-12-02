@@ -5,6 +5,7 @@
     "target": "ES2022",
     "useDefineForClassFields": true,
     "module": "ESNext",
+    "moduleResolution": "bundler",
     "types": ["svelte", "vite/client", "jest"],
     "noEmit": true,
     /**
@@ -16,7 +17,8 @@
     "allowJs": true,
     "checkJs": true,
     "moduleDetection": "force",
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "allowImportingTsExtensions": true
   },
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }

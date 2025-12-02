@@ -8,8 +8,8 @@ export * from './types/index'
 export * from './hooks/index';
 
 // Export amp state managers
-export * from './amp/combobox.amp.svelte';
-export * from './amp/async-combobox.amp.svelte';
+export * from './amp/combobox.amp.svelte.ts';
+export * from './amp/async-combobox.amp.svelte.ts';
 export * from './services/async-combobox.service';
 export * from './types/async-combobox.type';
 

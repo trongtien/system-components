@@ -4,10 +4,10 @@
   import type { ComboboxProps } from "../types";
   import type { AsyncComboboxConfig } from "../types/async-combobox.type";
   import { toStyleString } from "../utils";
-  import { createAsyncComboboxState } from "../amp/async-combobox.amp.svelte";
   import type { Snippet } from "svelte";
   import ComboboxTrigger from "./ComboboxTrigger.svelte";
   import AsyncComboboxDropdown from "./AsyncComboboxDropdown.svelte";
+  import { createAsyncComboboxState } from "../index";
 
   interface Props extends Omit<ComboboxProps, 'items'>, AsyncComboboxConfig {
     children?: Snippet;
