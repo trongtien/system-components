@@ -67,15 +67,29 @@ export function createComboboxState(config: ComboboxConfig) {
   );
 
   // Keyboard navigation hook
-  const keyboard = useComboboxKeyboard({
+  // Create keyboard handler that updates with reactive values
+  let keyboard = $state(useComboboxKeyboard({
     disabled: config.disabled,
-    items: filteredItems,
+    items: [],
     focusedIndex: state.focusedIndex,
     isOpen: state.isOpen,
     setFocusedIndex: state.setFocusedIndex,
     toggleDropdown: actions.toggleDropdown,
     closeDropdown: actions.closeDropdown,
     selectItem: actions.selectItem
+  }));
+  
+  $effect(() => {
+    keyboard = useComboboxKeyboard({
+      disabled: config.disabled,
+      items: filteredItems,
+      focusedIndex: state.focusedIndex,
+      isOpen: state.isOpen,
+      setFocusedIndex: state.setFocusedIndex,
+      toggleDropdown: actions.toggleDropdown,
+      closeDropdown: actions.closeDropdown,
+      selectItem: actions.selectItem
+    });
   });
 
   function handleSearchInput(query: string) {
@@ -128,7 +142,7 @@ export function createComboboxState(config: ComboboxConfig) {
     closeDropdown: actions.closeDropdown,
     selectItem: actions.selectItem,
     handleSearchInput,
-    handleKeydown: keyboard.handleKeydown,
+    handleKeydown: (event: KeyboardEvent) => keyboard.handleKeydown(event),
     handleClickOutside,
     scrollFocusedItemIntoView,
     setupFloatingUI,

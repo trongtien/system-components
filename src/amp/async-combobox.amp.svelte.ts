@@ -252,9 +252,10 @@ export function createAsyncComboboxState(config: AsyncComboboxManagerConfig) {
   }
 
   // Keyboard navigation hook
-  const keyboard = useComboboxKeyboard({
+  // Create keyboard handler that updates with reactive values
+  let keyboard = $state(useComboboxKeyboard({
     disabled: config.disabled,
-    items: displayItems,
+    items: [],
     focusedIndex: state.focusedIndex,
     isOpen: state.isOpen,
     setFocusedIndex: state.setFocusedIndex,
@@ -262,7 +263,22 @@ export function createAsyncComboboxState(config: AsyncComboboxManagerConfig) {
     closeDropdown,
     selectItem,
     onLoadMore: loadMore,
-    canLoadMore
+    canLoadMore: false
+  }));
+  
+  $effect(() => {
+    keyboard = useComboboxKeyboard({
+      disabled: config.disabled,
+      items: displayItems,
+      focusedIndex: state.focusedIndex,
+      isOpen: state.isOpen,
+      setFocusedIndex: state.setFocusedIndex,
+      toggleDropdown,
+      closeDropdown,
+      selectItem,
+      onLoadMore: loadMore,
+      canLoadMore
+    });
   });
 
   function handleClickOutside(event: MouseEvent) {
@@ -334,7 +350,7 @@ export function createAsyncComboboxState(config: AsyncComboboxManagerConfig) {
     closeDropdown,
     selectItem,
     handleSearchInput,
-    handleKeydown: keyboard.handleKeydown,
+    handleKeydown: (event: KeyboardEvent) => keyboard.handleKeydown(event),
     handleClickOutside,
     scrollFocusedItemIntoView,
     handleScroll,

@@ -1,6 +1,6 @@
 export { useFloatingUI, type UseFloatingUIOptions, type UseFloatingUIReturn } from './useFloatingUI';
 export { useTooltip, type UseTooltipOptions, type UseTooltipReturn } from './useTooltip';
-export { useComboboxState } from './useComboboxState';
+export { useComboboxState } from './useComboboxState.svelte';
 export { useComboboxGrouping, type GroupedItems } from './useComboboxGrouping';
 export { useComboboxKeyboard } from './useComboboxKeyboard';
 export { useComboboxDropdown } from './useComboboxDropdown';

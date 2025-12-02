@@ -12,3 +12,6 @@ export { default as Label } from './Label.svelte';
 export { default as Radio } from './Radio.svelte';
 export { default as Typography } from './Typography.svelte';
 export { default as Notify } from './Notify.svelte';
+export { default as GridContainer } from './GridContainer.svelte';
+export { default as GridItem } from './GridItem.svelte';
+export { default as GridBuilder } from './GridBuilder.svelte';

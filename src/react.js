@@ -1,6 +1,6 @@
 // Auto-generated React Component Wrappers for System Components
 // These render native HTML elements with the same styling and behavior
-// Generated at: 2025-12-01T09:52:41.681Z
+// Generated at: 2025-12-02T07:46:15.574Z
 
 import React, { forwardRef, useCallback } from 'react';
 
@@ -279,6 +279,66 @@ export const SystemComboboxtrigger = forwardRef((props, ref) => {
   }, children);});
 
 SystemComboboxtrigger.displayName = 'SystemComboboxtrigger';
+
+// SystemGridbuilder component - renders native HTML element
+export const SystemGridbuilder = forwardRef((props, ref) => {
+  const {
+    style,
+    className,
+    children,
+    ...rest
+  } = props;
+
+  const computedStyle = typeof style === 'object' ? style : (style || undefined);
+
+  return React.createElement('systemgridbuilder', {
+    ref,
+    className,
+    style: computedStyle,
+    ...rest
+  }, children);});
+
+SystemGridbuilder.displayName = 'SystemGridbuilder';
+
+// SystemGridcontainer component - renders native HTML element
+export const SystemGridcontainer = forwardRef((props, ref) => {
+  const {
+    style,
+    className,
+    children,
+    ...rest
+  } = props;
+
+  const computedStyle = typeof style === 'object' ? style : (style || undefined);
+
+  return React.createElement('systemgridcontainer', {
+    ref,
+    className,
+    style: computedStyle,
+    ...rest
+  }, children);});
+
+SystemGridcontainer.displayName = 'SystemGridcontainer';
+
+// SystemGriditem component - renders native HTML element
+export const SystemGriditem = forwardRef((props, ref) => {
+  const {
+    style,
+    className,
+    children,
+    ...rest
+  } = props;
+
+  const computedStyle = typeof style === 'object' ? style : (style || undefined);
+
+  return React.createElement('systemgriditem', {
+    ref,
+    className,
+    style: computedStyle,
+    ...rest
+  }, children);});
+
+SystemGriditem.displayName = 'SystemGriditem';
 
 // SystemInput component - renders native HTML element
 export const SystemInput = forwardRef((props, ref) => {

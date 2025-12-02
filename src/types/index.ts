@@ -5,6 +5,7 @@ export * from './card.type'
 export * from './combobox.type';
 export * from './combobox-state.type';
 export * from './async-combobox.type';
+export * from './grid.type';
 export * from './input.type'
 export * from './label.type'
 export * from './notify.type'

@@ -1,7 +1,7 @@
 <svelte:options customElement={{ tag: "notify-component", shadow: "none" }} />
 
 <script lang="ts">
-  import { NotifyAmp } from "../amp/notify.amp";
+  import { NotifyAmp } from "../amp/notify.amp.svelte";
   import type { NotifyProps } from "../types";
 
   interface Props extends NotifyProps {}
